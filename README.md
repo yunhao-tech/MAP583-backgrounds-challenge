@@ -1,3 +1,8 @@
+# DL-DIY potential project ideas
+- try different training techniques for improving robustness of networks to background changes: mixup, cutmix, use a pre-trained segmenter for cropping center objects on other backgrounds at train time
+
+----------------------
+
 The **backgrounds challenge** is a public dataset challenge for creating more background-robust models. This repository contains test datasets of ImageNet-9 (IN-9) with different amounts of background and foreground signal, which you can use to measure the extent to which your models rely on image backgrounds. These are described further in the paper: **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994), [blog](http://gradsci.org/background)).
 
 # Backgrounds Challenge
