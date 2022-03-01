@@ -1,5 +1,9 @@
 # DL-DIY potential project ideas
-- try different training techniques for improving robustness of networks to background changes: mixup, cutmix, use a pre-trained segmenter for cropping center objects on other backgrounds at train time
+- experiments with training on the proposed IN-9 dataset. Depending on available hardware resources you can use fewer images per class and/or smaller resolution images
+- try different training techniques for improving robustness of networks to background changes: mixup, cutmix, use a pre-trained segmenter for cropping center objects on other backgrounds at train time and do mixing using these masks
+- train an ensemble-like method in an efficient manner, e.g., [MIMO](https://github.com/noowad93/MIMO-pytorch), [BatchEnsemble](https://github.com/giannifranchi/LP_BNN)
+- try out other techniques for improving calibration of the model, e.g., [temperature scaling](https://github.com/dataflowr/Project-calibration-temperature_scaling), [focal loss](https://github.com/torrvision/focal_calibration)
+- try using [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization
 
 ----------------------
 
