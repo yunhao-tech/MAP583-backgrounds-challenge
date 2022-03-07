@@ -1,7 +1,7 @@
 # MAP583 - Deep learning project
 - Based on the **backgrounds challenge**, we use several new datasets (mixup, cutmix) to improve the robustness of networks to background changes. On the "original" dataset in IN-9, we use mixup and cutmix data augmentation tricks to generate new datasets called "mixup" and "cutmix". On the pretrained Resnet50, we fine-tune it respectively with these two datasets. Then, test the fine-tuned networks on validation set in IN-9 (Only-background-b, no foreground, mixed-same, mixed-rand, mixed-next). We also fine-tuned the Resnet50 on "original" dataset in IN-9, to compare the model robustness.
 - Moreover, we use [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization. 
-- Our models can be found on Google drive: [Resnet50 Trained on Original](https://drive.google.com/file/d/1iGlUQNj-uGG8UE5LAaveBOr5_91z4Cpn/view?usp=sharing), [Resnet50 Trained on Mixup](https://drive.google.com/file/d/1ktUgIab0Tslkl_HJ1GOHv66Wy4OQIEpZ/view?usp=sharing) and [Resnet50 Trained on MixCut](https://drive.google.com/file/d/17myBFhDjed6LLdVT1V7KO9IqwK5-N_mQ/view?usp=sharing).
+- You can find our codes in folder "Modification MAP583" and our models on Google drive: [Resnet50 Trained on Original](https://drive.google.com/file/d/1iGlUQNj-uGG8UE5LAaveBOr5_91z4Cpn/view?usp=sharing), [Resnet50 Trained on Mixup](https://drive.google.com/file/d/1ktUgIab0Tslkl_HJ1GOHv66Wy4OQIEpZ/view?usp=sharing) and [Resnet50 Trained on MixCut](https://drive.google.com/file/d/17myBFhDjed6LLdVT1V7KO9IqwK5-N_mQ/view?usp=sharing).
 
 ## Our result:
 Accuracy of Resnet50 on different test set:
