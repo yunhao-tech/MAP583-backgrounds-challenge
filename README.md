@@ -1,8 +1,15 @@
 # MAP583 - Deep learning project
-- Based on the **backgrounds challenge**, we use several new datasets (mixup, cutmix) to improve the robustness of networks to background changes. On the "original" dataset in IN-9, we use mixup and cutmix data augmentation tricks to generate new datasets called "mixup" and "cutmix". On the pretrained Resnet50, we fine-tune it respectively with mixup and cutmix dataset.
+- Based on the **backgrounds challenge**, we use several new datasets (mixup, cutmix) to improve the robustness of networks to background changes. On the "original" dataset in IN-9, we use mixup and cutmix data augmentation tricks to generate new datasets called "mixup" and "cutmix". On the pretrained Resnet50, we fine-tune it respectively with these two datasets. Then, test the fine-tuned networks on validation set in IN-9 (Only-background-b, no foreground, mixed-same, mixed-rand, mixed-next). We also fine-tuned the Resnet50 on "original" dataset in IN-9, to compare the model robustness.
 - Moreover, we use [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization. 
 
 ## Our result:
+|Test on |    Pretrained on Mixup	| Pretrained on Cutmix	| Pretrained on Original |
+|Only-bg-b	| Test Loss: 0.5067 Acc: 0.2050 | Test Loss: 0.4639 Acc: 0.2213	| TestLoss:0.5721 Acc: 0.2014 |
+|No fg 	| Test Loss: 0.5065 Acc: 0.3059	| Test Loss: 0.4149 Acc: 0.3634	|
+| Mixed-same | Test Loss: 0.2431 Acc: 0.5933 | Test Loss: 0.2463 Acc: 0.6000 | TestLoss:0.5515 Acc: 0.4461 |
+|Mixed-next | Test Loss: 0.3960 Acc: 0.3804 | Test Loss: 0.4597 Acc: 0.3252 | TestLoss:1.0082 Acc: 0.2105 |
+|Mixed-rand	| Test Loss: 0.3684 Acc: 0.4260 | Test Loss: 0.4097 Acc: 0.3871 | TestLoss:0.8755 Acc: 0.2657 |
+|BG-gap  |0.1673 |0.2129 | 0.1804 |
 
 
 
