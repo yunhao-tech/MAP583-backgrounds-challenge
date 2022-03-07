@@ -4,6 +4,7 @@
 
 ## Our result:
 |Test on |    Pretrained on Mixup	| Pretrained on Cutmix	| Pretrained on Original |
+|  ----  | ----  | ----| ----|
 |Only-bg-b	| Test Loss: 0.5067 Acc: 0.2050 | Test Loss: 0.4639 Acc: 0.2213	| TestLoss:0.5721 Acc: 0.2014 |
 |No fg 	| Test Loss: 0.5065 Acc: 0.3059	| Test Loss: 0.4149 Acc: 0.3634	|
 | Mixed-same | Test Loss: 0.2431 Acc: 0.5933 | Test Loss: 0.2463 Acc: 0.6000 | TestLoss:0.5515 Acc: 0.4461 |
