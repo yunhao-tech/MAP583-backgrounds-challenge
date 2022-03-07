@@ -3,6 +3,10 @@
 - Moreover, we use [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization. 
 - You can find our codes in folder "Modification MAP583" and our models on Google drive: [Resnet50 Trained on Original](https://drive.google.com/file/d/1iGlUQNj-uGG8UE5LAaveBOr5_91z4Cpn/view?usp=sharing), [Resnet50 Trained on Mixup](https://drive.google.com/file/d/1ktUgIab0Tslkl_HJ1GOHv66Wy4OQIEpZ/view?usp=sharing) and [Resnet50 Trained on MixCut](https://drive.google.com/file/d/17myBFhDjed6LLdVT1V7KO9IqwK5-N_mQ/view?usp=sharing).
 
+
+##our code:
+https://colab.research.google.com/drive/1oYp8CwsTCoSe_ULJtVvvE0MPXVN5gJeM#scrollTo=JQ6lT16zwGUj
+
 ## Our result:
 Accuracy of Resnet50 on different test set:
 |Test on |    Trained on Mixup	| Trained on Cutmix	| Trained on Original |
