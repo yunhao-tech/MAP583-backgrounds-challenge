@@ -1,9 +1,10 @@
-# DL-DIY potential project ideas
-- experiments with training on the proposed IN-9 dataset. Depending on available hardware resources you can use fewer images per class and/or smaller resolution images
-- try different training techniques for improving robustness of networks to background changes: mixup, cutmix, use a pre-trained segmenter for cropping center objects on other backgrounds at train time and do mixing using these masks
-- train an ensemble-like method in an efficient manner, e.g., [MIMO](https://github.com/noowad93/MIMO-pytorch), [BatchEnsemble](https://github.com/giannifranchi/LP_BNN)
-- try out other techniques for improving calibration of the model, e.g., [temperature scaling](https://github.com/dataflowr/Project-calibration-temperature_scaling), [focal loss](https://github.com/torrvision/focal_calibration)
-- try using [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization
+# MAP583 - Deep learning project
+- Based on the **backgrounds challenge**, we use several new datasets (mixup, cutmix) to improve the robustness of networks to background changes. On the "original" dataset in IN-9, we use mixup and cutmix data augmentation tricks to generate new datasets called "mixup" and "cutmix". On the pretrained Resnet50, we fine-tune it respectively with mixup and cutmix dataset.
+- Moreover, we use [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization. 
+
+## Our result:
+
+
 
 ----------------------
 
