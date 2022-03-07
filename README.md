@@ -3,22 +3,33 @@
 - Moreover, we use [Stochastic Weight Averaging](https://github.com/timgaripov/swa) to improve generalization. 
 
 ## Our result:
-|Test on |    Pretrained on Mixup	| Pretrained on Cutmix	| Pretrained on Original |
-|  ----  | ----  | ----| ----|
-|Only-bg-b	| Test Loss: 0.5067 Acc: 0.2050 | Test Loss: 0.4639 Acc: 0.2213	| TestLoss:0.5721 Acc: 0.2014 |
-|No fg 	| Test Loss: 0.5065 Acc: 0.3059	| Test Loss: 0.4149 Acc: 0.3634	|
-| Mixed-same | Test Loss: 0.2431 Acc: 0.5933 | Test Loss: 0.2463 Acc: 0.6000 | TestLoss:0.5515 Acc: 0.4461 |
-|Mixed-next | Test Loss: 0.3960 Acc: 0.3804 | Test Loss: 0.4597 Acc: 0.3252 | TestLoss:1.0082 Acc: 0.2105 |
-|Mixed-rand	| Test Loss: 0.3684 Acc: 0.4260 | Test Loss: 0.4097 Acc: 0.3871 | TestLoss:0.8755 Acc: 0.2657 |
-|BG-gap  |0.1673 |0.2129 | 0.1804 |
+Accuracy of Resnet50 on different test set:
+|Test on |    Pre-trained on Mixup	| Pre-trained on Cutmix	| Pre-trained on Original |
+|  :----:  | :----:  | :----: | :----: |
+|Only-bg-b | 20.5% | 22.1% | 20.1% |
+|No fg 	| 30.6% | 36.3% | 26.5% |
+|Mixed-next | 38.0% | 32.5% | 21.1% |
+|Mixed-same | 59.3% | 60.0% | 44.6% |
+|Mixed-rand	| 42.6% | 38.7% | 26.6% |
+|BG-gap  | 16.7% | 21.3% | 18.0% |
+
+## Comparison and analysis of result:
+The last two columns (Pre-trained on ImageNet & Pre-trained on IN-9L) are from paper **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994)).
+|Test on |    Pre-trained on Mixup	| Pre-trained on Cutmix	| Pre-trained on Original | Pre-trained on ImageNet | Pre-trained on IN-9L |
+|  :----:  | :----:  | :----: | :----: | :----: | :----: | 
+|Mixed-same | 59.3% | 60.0% | 44.6% | 82.3% | 89.9% |
+|Mixed-rand	| 42.6% | 38.7% | 26.6% | 76.3% | 75.6% | 
+|BG-gap  | 16.7% | 21.3% | 18.0% | 6% | 14.3%|
 
 
+Below is the original README in Project-backgrounds-challenge repository.
 
 ----------------------
 
-The **backgrounds challenge** is a public dataset challenge for creating more background-robust models. This repository contains test datasets of ImageNet-9 (IN-9) with different amounts of background and foreground signal, which you can use to measure the extent to which your models rely on image backgrounds. These are described further in the paper: **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994), [blog](http://gradsci.org/background)).
 
 # Backgrounds Challenge
+The **backgrounds challenge** is a public dataset challenge for creating more background-robust models. This repository contains test datasets of ImageNet-9 (IN-9) with different amounts of background and foreground signal, which you can use to measure the extent to which your models rely on image backgrounds. These are described further in the paper: **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994), [blog](http://gradsci.org/background)).
+
 Deep computer vision models rely on both foreground objects and image backgrounds. Even when the correct foreground object is present, such models often make incorrect predictions when the image background is changed, and they are especially vulnerable to **adversarially chosen backgrounds**. For example, the [the official pre-trained PyTorch ResNet-50](https://pytorch.org/docs/stable/torchvision/models.html) has an accuracy of 22% when evaluated against adversarial backgrounds on ImageNet-9 (for reference, a model that always predicts "dog" has an accuracy of 11%).
 
 Thus, the goal of this challenge is to understand how background-robust models can be. Specifically, we assess models by their accuracy on images containing foregrounds superimposed on backgrounds which are adversarially chosen from the test set. We encourage researchers to use this challenge to benchmark progress on background-robustness, which can be important for determining models' out of distribution performance. We will maintain a leaderboard of top submissions.
