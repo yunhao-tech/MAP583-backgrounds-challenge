@@ -4,7 +4,7 @@
 
 ## Our result:
 Accuracy of Resnet50 on different test set:
-|Test on |    Pre-trained on Mixup	| Pre-trained on Cutmix	| Pre-trained on Original |
+|Test on |    Trained on Mixup	| Trained on Cutmix	| Trained on Original |
 |  :----:  | :----:  | :----: | :----: |
 |Only-bg-b | 20.5% | 22.1% | 20.1% |
 |No fg 	| 30.6% | 36.3% | 26.5% |
@@ -13,9 +13,11 @@ Accuracy of Resnet50 on different test set:
 |Mixed-rand	| 42.6% | 38.7% | 26.6% |
 |BG-gap  | 16.7% | 21.3% | 18.0% |
 
+The BG-GAP is defined as the difference in test accuracy between Mixed-same and Mixed-rand and helps assess the tendency of such models to rely on background signal.
+
 ## Comparison and analysis of result:
 The last two columns (Pre-trained on ImageNet & Pre-trained on IN-9L) are from paper **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994)).
-|Test on |    Pre-trained on Mixup	| Pre-trained on Cutmix	| Pre-trained on Original | Pre-trained on ImageNet | Pre-trained on IN-9L |
+|Test on |    Trained on Mixup	| Trained on Cutmix	| Trained on Original | Pre-trained on ImageNet | Trained on IN-9L |
 |  :----:  | :----:  | :----: | :----: | :----: | :----: | 
 |Mixed-same | 59.3% | 60.0% | 44.6% | 82.3% | 89.9% |
 |Mixed-rand	| 42.6% | 38.7% | 26.6% | 76.3% | 75.6% | 
