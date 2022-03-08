@@ -22,7 +22,15 @@ The BG-GAP is defined as the difference in test accuracy between Mixed-same and 
 
 We could find that the model 'mixup' relies less on background (smallest BG-Gap among the three). This is because there is no clear interface between foreground and background in training set, the model tends to depend less on background. On the contrary, the clear dividing line between background and foreground in dataset Cutmix makes the corresponding model more dependent on background(biggest BG-Gap among the three).
 
-## Comparison with the paper:
+### Influence of Stochastic Weight Averaging(SWA)
+Training accuracy of 'mixup' network after 200 epochs:
+| With SWA| Without SWA| 
+| :----:| :----: | 
+| 0.73 | 0.67 | 
+
+With Stochastic Weight Averaging, the training accuracy increases for the same network structure and training data.
+
+### Comparison with the paper:
 The last two columns (Pre-trained on ImageNet & Pre-trained on IN-9L) are from paper **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994)).
 |Test on |    Trained on Mixup	| Trained on Cutmix	| Trained on Original | Pre-trained on ImageNet | Trained on IN-9L |
 |  :----:  | :----:  | :----: | :----: | :----: | :----: | 
