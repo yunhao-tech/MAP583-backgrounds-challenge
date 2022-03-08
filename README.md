@@ -4,7 +4,7 @@
 - You can find our codes in folder "Modification MAP583" and our models on Google drive: [Resnet50 Trained on Original](https://drive.google.com/file/d/1iGlUQNj-uGG8UE5LAaveBOr5_91z4Cpn/view?usp=sharing), [Resnet50 Trained on Mixup](https://drive.google.com/file/d/1ktUgIab0Tslkl_HJ1GOHv66Wy4OQIEpZ/view?usp=sharing) and [Resnet50 Trained on MixCut](https://drive.google.com/file/d/17myBFhDjed6LLdVT1V7KO9IqwK5-N_mQ/view?usp=sharing).
 
 
-## our code:
+## Our code on Google colab:
 https://colab.research.google.com/drive/1oYp8CwsTCoSe_ULJtVvvE0MPXVN5gJeM#scrollTo=JQ6lT16zwGUj
 
 ## Our result:
@@ -18,9 +18,11 @@ Accuracy of Resnet50 on different test set:
 |Mixed-rand	| 42.6% | 38.7% | 26.6% |
 |BG-gap  | 16.7% | 21.3% | 18.0% |
 
-The BG-GAP is defined as the difference in test accuracy between Mixed-same and Mixed-rand and helps assess the tendency of such models to rely on background signal.
+The BG-GAP is defined as the difference in test accuracy between Mixed-same and Mixed-rand and helps assess the tendency of such models to rely on background signal. Bigger the BG-Gap, more the model depends on the background. 
 
-## Comparison and analysis of result:
+We could find that the model 'mixup' relies less on background (smallest BG-Gap among the three). This is because there is no clear interface between foreground and background in training set, the model tends to depend less on background. On the contrary, the clear dividing line between background and foreground in dataset Cutmix makes the corresponding model more dependent on background(biggest BG-Gap among the three).
+
+## Comparison with the paper:
 The last two columns (Pre-trained on ImageNet & Pre-trained on IN-9L) are from paper **"Noise or Signal: The Role of Image Backgrounds in Object Recognition"** ([preprint](https://arxiv.org/abs/2006.09994)).
 |Test on |    Trained on Mixup	| Trained on Cutmix	| Trained on Original | Pre-trained on ImageNet | Trained on IN-9L |
 |  :----:  | :----:  | :----: | :----: | :----: | :----: | 
@@ -28,6 +30,7 @@ The last two columns (Pre-trained on ImageNet & Pre-trained on IN-9L) are from p
 |Mixed-rand	| 42.6% | 38.7% | 26.6% | 76.3% | 75.6% | 
 |BG-gap  | 16.7% | 21.3% | 18.0% | 6% | 14.3%|
 
+We find that the two models in the paper are in average more accurate than our models. Moreover, their BG-gap are smaller.
 
 Below is the original README in Project-backgrounds-challenge repository.
 
